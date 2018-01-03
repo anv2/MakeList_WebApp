@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="YayAngular">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Short biography of me </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap. Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Bootstrap. Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="content/main.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js" type="application/javascript"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<script src="scripts/app.js" type="application/javascript"></script>
+	<script src="scripts/MainController.js" type="application/javascript"></script>
+</head>
+
+
+    <body ng-app="YayAngular">
+        <div ng-controller="MainController">
+            <header class="container-fluid">
+                <h1> Your errand list in one place! </h1>
+            </header>
+            <aside class="col-sm-3">    
+            <img src = "images/salad.jpg">
+                    <ul>
+                        <li ng-repeat="x in products">
+                            {{x}}
+                            <span ng-click="removeItem($index)">&times;</span>
+                        </li>
+                    </ul>
+                    <input ng-model="addMe">
+                    <button ng-click="addItem()">Add</button>
+                    <p id="error">{{errortext}}</p>
+            </aside>
+ 
+                <div class="col-sm-1">
+                    <p id="badge"></p>
+                </div>
+                </div>
+            </aside>
+        </div>
+
+            <footer ng-app="YayAngular" ng-controller="MainController">
+                <p>{{ timestamp }}</p>
+            </footer>
+
+        </div>
+    </body>
+</html>

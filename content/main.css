@@ -1,0 +1,17 @@
+header, footer{
+    background-color: green;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+aside{
+    padding-top: 10px;
+    font-weight: bold;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+#error { 
+    color: red;
+}
